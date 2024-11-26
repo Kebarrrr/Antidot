@@ -6,7 +6,7 @@
 
 <div align="center">
     <!-- Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg -->
-    <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=747B2E&center=true&vCenter=true&width=700&lines=C242-PS176;Project+to+Develop+a+Predictive+Diagnostics+Application+for+Disease+Symptoms;Antidot" alt="Typing SVG" />
+    <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=747B2E&center=true&vCenter=true&width=700&lines=C242-PS176;Predictive+Diagnostics+Application+for+Disease+Symptoms;Antidot" alt="Typing SVG" />
     </a>
 </div>
 
@@ -19,11 +19,11 @@ Health Innovation: Empowering Vulnerable Communities for Health and Well-being
 ## **Project Team**
 
 <p align="center"> 
-<table>
+<table align="center">
     <tr>
-        <td colspan=4 align="center">C242-PS176</td>
+        <td colspan=5>C242-PS176</td>
     </tr>
-    <tr align="center">
+    <tr>
         <td>No</td>
         <td>Nama</td>
         <td>Specialization</td>
@@ -32,7 +32,7 @@ Health Innovation: Empowering Vulnerable Communities for Health and Well-being
     </tr>
     <tr>
         <td>1</td>
-        <td>Benedict Raditya Pradipta Ginting</td>
+        <td align="left">Benedict Raditya Pradipta Ginting</td>
         <td>Machine Learning</td>
         <td>M314B4KY0836</td>
         <td>Universitas Singaperbangsa Karawang</td>
