@@ -7,6 +7,7 @@ const PORT = process.env.PORT;
 const authRoute = require("./routes/authRoute");
 const antibioticsRoute = require("./routes/antibioticsRoute");
 const profileRoute = require("./routes/profileRoute");
+const articlesRoute = require("./routes/articleRoute");
 const path = require("path");
 
 // middleware
@@ -22,6 +23,7 @@ app.use(
 app.use("/auth", authRoute);
 app.use("/antibiotics", antibioticsRoute);
 app.use("/profile", profileRoute);
+app.use("/articles", articlesRoute);
 
 // server
 app.listen(PORT, () => {

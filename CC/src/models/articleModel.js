@@ -1,31 +1,24 @@
 const db = require("../config/database");
 const { Sequelize, DataTypes } = require("sequelize");
 
-const antibiotic = db.define(
-  "antibiotics",
+const article = db.define(
+  "articles",
   {
-    antibioticID: {
+    articleID: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false,
     },
-    antibioticName: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
-    dosageText: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-    dosage: {
-      type: DataTypes.INTEGER,
+    date: {
+      type: DataTypes.DATE,
       allowNull: false,
       validate: {
         notEmpty: true,
@@ -38,7 +31,14 @@ const antibiotic = db.define(
         notEmpty: true,
       },
     },
-    antibioticImage: {
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    url: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -52,4 +52,4 @@ const antibiotic = db.define(
   }
 );
 
-module.exports = antibiotic;
+module.exports = article;
