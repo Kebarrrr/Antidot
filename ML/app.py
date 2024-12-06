@@ -95,11 +95,17 @@ def predict():
         # Convert predictions to disease names
         disease_probs = {inverse_disease_mapping[i]: float(prob) for i, prob in enumerate(probabilities)}
         
-        # Sort the diseases by their probabilities (correct sorting method)
-        sorted_probs = sorted(disease_probs.items(), key=lambda item: item[1], reverse=True)
+        # # Sort the diseases by their probabilities
+        # sorted_probs = sorted(disease_probs.items(), key=lambda item: item[1], reverse=True)
 
-        # Return sorted diseases with their probabilities as a list of tuples
-        return jsonify({"predictions": sorted_probs}), 200
+        # Get the disease with the highest probability
+        top_disease = max(disease_probs.items(), key=lambda item: item[1])
+        
+        # # Return sorted diseases with their probabilities as a list of tuples
+        # return jsonify({"predictions": sorted_probs}), 200
+        
+        # Return the top disease and its probability
+        return jsonify({"prediction": {"disease": top_disease[0], "probability": top_disease[1]}}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
