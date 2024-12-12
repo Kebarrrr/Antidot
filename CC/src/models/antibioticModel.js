@@ -1,7 +1,7 @@
-const db = require("../config/database");
+const db = require("../config/database"); // Sesuaikan dengan file konfigurasi database Anda
 const { Sequelize, DataTypes } = require("sequelize");
 
-const antibiotic = db.define(
+const Antibiotic = db.define(
   "antibiotics",
   {
     antibioticID: {
@@ -10,46 +10,57 @@ const antibiotic = db.define(
       autoIncrement: true,
       allowNull: false,
     },
-    antibioticName: {
+    disease: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
-    dosageText: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-    dosage: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-    description: {
+    disease_description: {
       type: DataTypes.TEXT,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
+      allowNull: true,
     },
-    antibioticImage: {
+    antibiotics_name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
+    },
+    antibiotics_usage: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    antibiotics_description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    antibiotics_dosage: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    antibiotic_frequency_usage_per_day: {
+      type: DataTypes.ENUM("1x sehari", "2x sehari", "3x sehari"),
+      allowNull: false,
+    },
+    antibiotic_total_days_of_usage: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    others: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    antibiotic_image: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
     freezeTableName: true,
-    timestamps: false,
+    timestamps: false, // Karena tidak ada field createdAt / updatedAt pada tabel ini
   }
 );
 
-module.exports = antibiotic;
+module.exports = Antibiotic;

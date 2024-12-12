@@ -5,5 +5,10 @@ const antibioticsController = require("../controllers/antibiotics");
 
 router.get("/", authenticate, antibioticsController.getAllAntibiotics);
 router.get("/:id", authenticate, antibioticsController.getAntibioticById);
+router.get(
+  "/search/:query",
+  authenticate,
+  antibioticsController.searchAntibiotic
+);
 
 module.exports = router;

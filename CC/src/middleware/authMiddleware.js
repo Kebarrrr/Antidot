@@ -38,7 +38,7 @@ const authenticate = async (req, res, next) => {
       })
     );
   }
-  req.User;
+  req.User = currentUser;
   req.userID = decoded.userID;
   next();
 };

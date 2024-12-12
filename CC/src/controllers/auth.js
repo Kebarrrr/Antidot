@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const argon2 = require("argon2");
 const User = require("../models/userModel");
+const { bucket } = require("@google-cloud/storage");
 
 const register = async (req, res) => {
   try {
@@ -53,9 +54,7 @@ const register = async (req, res) => {
     const birthYear = new Date(birthDate).getFullYear();
     const age = currentYear - birthYear;
 
-    const profilePicture = `${req.protocol}://${req.get(
-      "host"
-    )}/public/uploads/default-avatar.png`;
+    const profilePicture = `https://storage.googleapis.com/antidot-storage-bucket/profile-pictures/default-avatar.png`;
 
     // Simpan data pengguna ke database
     const newUser = await User.create({
